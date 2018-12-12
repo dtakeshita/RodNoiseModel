@@ -27,9 +27,10 @@ function out = generate_pigmentnoise( single_event0, r_set, fs, Tsim, varargin )
     single_event = [g_zero single_event0 g_zero];
     offset = -n_taper;
     n_single = length(single_event);
+    dt = 1/fs;
     t_g = dt*[0:length(single_event)-1];
         
-    dt = 1/fs;
+    
     t = 0:dt:Tsim+2;%add 1sec buffer
     M = zeros(size(r_set));
     V = M;
